@@ -1,0 +1,27 @@
+version: 2
+
+models:
+    - name: stg_coin_prices
+      description: "Cleaned and renamed version of raw coin prices from CoinGecko API"
+      columns:
+          - name: coin_id
+            description: "Unique identifier for each coin (e.g. 'bitcoin')"
+            data_tests:
+                - unique
+                - not_null
+
+          - name: symbol
+            description: "Short ticker symbol (e.g. 'btc'"
+            data_tests:
+                - not_null
+
+          - name: current_price
+            description: "Current price on USD"
+            data_tests:
+                 - not_null
+
+          - name: last_updated
+            description: "Timestamp of when CoinGeko last updated its coin data"
+            data_tests:
+                 - not_null
+
