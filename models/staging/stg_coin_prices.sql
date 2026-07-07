@@ -7,5 +7,6 @@ select
     market_cap_rank,
     total_volume,
     price_change_percentage_24h,
-    last_updated
+    last_updated,
+    loaded_at
 from {{ source('public','coin_prices')}}
